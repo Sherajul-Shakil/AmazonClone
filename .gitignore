@@ -30,7 +30,6 @@
 .pub-cache/
 .pub/
 /build/
-/lib/server/node_modules
 node_modules
 
 # Web related
