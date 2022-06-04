@@ -50,4 +50,41 @@ class AuthService {
       showSnackBar(context, e.toString());
     }
   }
+
+  // sign in user
+  void signInUser({
+    required BuildContext context,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      http.Response res = await http.post(
+        Uri.parse('$uri/api/signin'),
+        body: jsonEncode({
+          'email': email,
+          'password': password,
+        }),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+      print(res.body);
+      httpErrorHandle(
+        response: res,
+        context: context,
+        onSuccess: () async {
+          // SharedPreferences prefs = await SharedPreferences.getInstance();
+          // Provider.of<UserProvider>(context, listen: false).setUser(res.body);
+          // await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
+          // Navigator.pushNamedAndRemoveUntil(
+          //   context,
+          //   BottomBar.routeName,
+          //   (route) => false,
+          // );
+        },
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+  }
 }
