@@ -1,5 +1,7 @@
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
+import 'package:amazon_clone/features/auth/services/auth_service.dart';
+import 'package:amazon_clone/home.dart';
 import 'package:amazon_clone/providers/user_provider.dart';
 import 'package:amazon_clone/router.dart';
 
@@ -22,13 +24,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  //final AuthService authService = AuthService();
+  final AuthService authService = AuthService();
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   authService.getUserData(context);
-  // }
+  @override
+  void initState() {
+    super.initState();
+    authService.getUserData(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,9 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true, // can remove this line
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const AuthScreen(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? HomePage()
+          : AuthScreen(),
       // home: Provider.of<UserProvider>(context).user.token.isNotEmpty
       //     ? Provider.of<UserProvider>(context).user.type == 'user'
       //         ? const BottomBar()
