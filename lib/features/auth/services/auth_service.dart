@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:amazon_clone/common/widgets/bottom_bar.dart';
 import 'package:amazon_clone/constants/error_handling.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:amazon_clone/constants/utils.dart';
@@ -69,7 +70,7 @@ class AuthService {
           'Content-Type': 'application/json; charset=UTF-8',
         },
       );
-      print(Provider.of<UserProvider>(context, listen: false).user.toJson());
+      //print(Provider.of<UserProvider>(context, listen: false).user.toJson());
       //print('Body :${res.body}');
       httpErrorHandle(
         response: res,
@@ -79,11 +80,11 @@ class AuthService {
           Provider.of<UserProvider>(context, listen: false)
               .setUser(res.body); //Out site build func->listen: false
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
-          // Navigator.pushNamedAndRemoveUntil(
-          //   context,
-          //   BottomBar.routeName,
-          //   (route) => false,
-          // );
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            BottomBar.routeName,
+            (route) => false,
+          );
         },
       );
     } catch (e) {
