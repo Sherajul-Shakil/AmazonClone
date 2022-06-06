@@ -11,6 +11,7 @@ void showSnackBar(BuildContext context, String text) {
   );
 }
 
+//pick images in add product page
 Future<List<File>> pickImages() async {
   List<File> images = [];
   try {
