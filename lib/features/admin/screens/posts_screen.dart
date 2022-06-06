@@ -27,16 +27,16 @@ class _PostsScreenState extends State<PostsScreen> {
     setState(() {});
   }
 
-  // void deleteProduct(Product product, int index) {
-  //   adminServices.deleteProduct(
-  //     context: context,
-  //     product: product,
-  //     onSuccess: () {
-  //       products!.removeAt(index);
-  //       setState(() {});
-  //     },
-  //   );
-  // }
+  void deleteProduct(Product product, int index) {
+    adminServices.deleteProduct(
+      context: context,
+      product: product,
+      onSuccess: () {
+        products!.removeAt(index);
+        setState(() {});
+      },
+    );
+  }
 
   void navigateToAddProduct() {
     Navigator.pushNamed(context, AddProductScreen.routeName);
@@ -56,7 +56,7 @@ class _PostsScreenState extends State<PostsScreen> {
                 return Column(
                   children: [
                     SizedBox(
-                      height: 140,
+                      height: 130,
                       child: SingleProduct(
                         image: productData.images[0],
                       ),
@@ -64,6 +64,7 @@ class _PostsScreenState extends State<PostsScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        //const SizedBox(width: 0),
                         Expanded(
                           child: Text(
                             productData.name,
@@ -71,12 +72,12 @@ class _PostsScreenState extends State<PostsScreen> {
                             maxLines: 2,
                           ),
                         ),
-                        // IconButton(
-                        //   onPressed: () => deleteProduct(productData, index),
-                        //   icon: const Icon(
-                        //     Icons.delete_outline,
-                        //   ),
-                        // ),
+                        IconButton(
+                          onPressed: () => deleteProduct(productData, index),
+                          icon: const Icon(
+                            Icons.delete_outline,
+                          ),
+                        ),
                       ],
                     ),
                   ],
