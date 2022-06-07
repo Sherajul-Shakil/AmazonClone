@@ -5,7 +5,7 @@ const adminRouter = require("./routes/admin");
 // IMPORTS FROM OTHER FILES //
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
-// const userRouter = require("./routes/user");
+const userRouter = require("./routes/user");
 
 // INIT //
 const PORT = process.env.PORT || 3000;
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(authRouter);
 app.use(adminRouter);
 app.use(productRouter);
-// app.use(userRouter);
+app.use(userRouter);
 
 // Connections //
 mongoose
