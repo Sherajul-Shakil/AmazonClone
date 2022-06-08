@@ -59,6 +59,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var address = context.watch<UserProvider>().user.address;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
@@ -214,13 +215,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               color: Colors.black12,
               height: 5,
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: CustomButton(
-                text: 'Buy Now',
-                onTap: () {},
+            if (context.watch<UserProvider>().user.address.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: CustomButton(
+                  text: 'Buy Now',
+                  onTap: () {},
+                ),
               ),
-            ),
             const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(10),
