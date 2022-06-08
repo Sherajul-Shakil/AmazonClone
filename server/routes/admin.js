@@ -2,7 +2,7 @@ const express = require("express");
 const adminRouter = express.Router();
 const admin = require("../middlewares/admin");
 const { Product } = require("../models/product");
-// const Order = require("../models/order");
+const Order = require("../models/order");
 const { PromiseProvider } = require("mongoose");
 
 // Add product
@@ -41,6 +41,16 @@ adminRouter.post("/admin/delete-product", admin, async (req, res) => {
     const { id } = req.body;
     let product = await Product.findByIdAndDelete(id);
     res.json(product);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+//Get order from admin site
+adminRouter.get("/admin/get-orders", admin, async (req, res) => {
+  try {
+    const orders = await Order.find({});
+    res.json(orders);
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
