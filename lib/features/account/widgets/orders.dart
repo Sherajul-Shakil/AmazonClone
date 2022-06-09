@@ -41,11 +41,12 @@ class _OrdersState extends State<Orders> {
                     padding: const EdgeInsets.only(
                       left: 15,
                     ),
-                    child: const Text(
+                    child: Text(
                       'Your Orders',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
+                        color: GlobalVariables.selectedNavBarColor,
                       ),
                     ),
                   ),

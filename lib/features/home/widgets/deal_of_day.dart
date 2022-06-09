@@ -43,17 +43,26 @@ class _DealOfDayState extends State<DealOfDay> {
             : GestureDetector(
                 onTap: navigateToDetailScreen,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Container(
                       alignment: Alignment.center,
-                      padding: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
+                      ),
                       child: const Text(
                         'Deal of the day',
                         style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.redAccent,
-                        ),
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: const Color.fromARGB(255, 235, 162, 53),
                       ),
                     ),
                     Image.network(
@@ -68,7 +77,7 @@ class _DealOfDayState extends State<DealOfDay> {
                         '\$${product!.price.toString()}',
                         style: const TextStyle(
                           fontSize: 18,
-                          color: Colors.redAccent,
+                          color: Color.fromRGBO(255, 153, 0, 1),
                         ),
                       ),
                     ),
@@ -81,9 +90,9 @@ class _DealOfDayState extends State<DealOfDay> {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.black),
                       ),
                     ),
                     SingleChildScrollView(
@@ -109,10 +118,10 @@ class _DealOfDayState extends State<DealOfDay> {
                         alignment: Alignment.topLeft,
                         child: TextButton(
                           onPressed: navigateToDetailScreen,
-                          child: Text(
+                          child: const Text(
                             'See all deals',
                             style: TextStyle(
-                              color: Colors.cyan[800],
+                              color: Colors.black,
                             ),
                           ),
                         )),

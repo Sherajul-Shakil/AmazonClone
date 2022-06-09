@@ -50,7 +50,8 @@ class _CategoryDealsScreenState extends State<CategoryDealsScreen> {
           title: Text(
             widget.category,
             style: const TextStyle(
-              color: Colors.black,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -67,8 +68,8 @@ class _CategoryDealsScreenState extends State<CategoryDealsScreen> {
                     'Keep shopping for ${widget.category}',
                     style: const TextStyle(
                       fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromRGBO(255, 153, 0, 1),
                     ),
                   ),
                 ),

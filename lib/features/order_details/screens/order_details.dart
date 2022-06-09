@@ -82,7 +82,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                             ),
                             child: Icon(
                               Icons.search,
-                              color: Colors.black,
+                              color: Colors.black45,
                               size: 23,
                             ),
                           ),
@@ -119,7 +119,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                 color: Colors.transparent,
                 height: 42,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: const Icon(Icons.mic, color: Colors.black, size: 25),
+                child: const Icon(Icons.mic, color: Colors.white, size: 25),
               ),
             ],
           ),
@@ -153,7 +153,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                       DateTime.fromMillisecondsSinceEpoch(
                           widget.order.orderedAt),
                     )}'),
-                    Text('Order ID:          ${widget.order.id}'),
+                    Text('Order ID:           ${widget.order.id}'),
                     Text('Order Total:      \$${widget.order.totalPrice}'),
                   ],
                 ),

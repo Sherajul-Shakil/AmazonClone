@@ -43,7 +43,7 @@ class TopCategories extends StatelessWidget {
                   GlobalVariables.categoryImages[index]['title']!,
                   style: const TextStyle(
                     fontSize: 12,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],

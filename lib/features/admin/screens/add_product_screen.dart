@@ -80,8 +80,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
           title: const Text(
             'Add Product',
             style: TextStyle(
-              color: Colors.black,
-            ),
+                color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -189,6 +188,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   text: 'Sell',
                   onTap: sellProduct,
                 ),
+                SizedBox(height: 10),
               ],
             ),
           ),

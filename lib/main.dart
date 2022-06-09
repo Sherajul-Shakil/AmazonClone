@@ -52,9 +52,6 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true, // can remove this line
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      // home: Provider.of<UserProvider>(context).user.token.isNotEmpty
-      //     ? BottomBar()
-      //     : AuthScreen(),
       home: Provider.of<UserProvider>(context).user.token.isNotEmpty
           ? Provider.of<UserProvider>(context).user.type == 'user'
               ? const BottomBar()

@@ -14,8 +14,8 @@ class AddressBox extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 114, 226, 221),
-            Color.fromARGB(255, 162, 236, 233),
+            Color.fromRGBO(230, 153, 0, 8),
+            Color.fromRGBO(230, 153, 50, .6),
           ],
           stops: [0.5, 1.0],
         ),
@@ -26,6 +26,7 @@ class AddressBox extends StatelessWidget {
           const Icon(
             Icons.location_on_outlined,
             size: 20,
+            color: Colors.white,
           ),
           Expanded(
             child: Padding(
@@ -34,6 +35,7 @@ class AddressBox extends StatelessWidget {
                 'Delivery to ${user.name} - ${user.address}',
                 style: const TextStyle(
                   fontWeight: FontWeight.w500,
+                  color: Colors.white,
                 ),
                 overflow: TextOverflow.ellipsis,
               ),
@@ -47,6 +49,7 @@ class AddressBox extends StatelessWidget {
             child: Icon(
               Icons.arrow_drop_down_outlined,
               size: 18,
+              color: Colors.white,
             ),
           )
         ],

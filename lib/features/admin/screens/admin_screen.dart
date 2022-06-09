@@ -49,7 +49,7 @@ class _AdminScreenState extends State<AdminScreen> {
                   'assets/images/amazon_in.png',
                   width: 120,
                   height: 45,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
               Row(
@@ -57,7 +57,7 @@ class _AdminScreenState extends State<AdminScreen> {
                   const Text(
                     'Admin',
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

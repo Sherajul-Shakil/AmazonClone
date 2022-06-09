@@ -65,17 +65,25 @@ class _PostsScreenState extends State<PostsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         //const SizedBox(width: 0),
-                        Expanded(
-                          child: Text(
-                            productData.name,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 0),
+                          child: Expanded(
+                            child: Text(
+                              productData.name,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
                           ),
                         ),
                         IconButton(
                           onPressed: () => deleteProduct(productData, index),
                           icon: const Icon(
                             Icons.delete_outline,
+                            color: Colors.red,
                           ),
                         ),
                       ],

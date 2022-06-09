@@ -71,7 +71,7 @@ class _CartScreenState extends State<CartScreen> {
                             ),
                             child: Icon(
                               Icons.search,
-                              color: Colors.black,
+                              color: Colors.black45,
                               size: 23,
                             ),
                           ),
@@ -108,7 +108,7 @@ class _CartScreenState extends State<CartScreen> {
                 color: Colors.transparent,
                 height: 42,
                 margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: const Icon(Icons.mic, color: Colors.black, size: 25),
+                child: const Icon(Icons.mic, color: Colors.white, size: 25),
               ),
             ],
           ),

@@ -12,24 +12,24 @@ class BelowAppBar extends StatelessWidget {
 
     return Container(
       decoration: const BoxDecoration(
-        gradient: GlobalVariables.appBarGradient,
+        gradient: GlobalVariables.topBarGradient,
       ),
-      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
       child: Row(
         children: [
           RichText(
             text: TextSpan(
               text: 'Hello, ',
               style: const TextStyle(
-                fontSize: 22,
-                color: Colors.black,
+                fontSize: 18,
+                color: Colors.white,
               ),
               children: [
                 TextSpan(
                   text: user.name,
                   style: const TextStyle(
                     fontSize: 22,
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
