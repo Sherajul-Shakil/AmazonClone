@@ -31,6 +31,7 @@
 .pub/
 /build/
 node_modules
+server
 
 # Web related
 lib/generated_plugin_registrant.dart

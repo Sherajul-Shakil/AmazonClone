@@ -5,6 +5,7 @@ import 'package:amazon_clone/features/product_details/screens/product_details_sc
 import 'package:amazon_clone/models/product.dart';
 import 'package:flutter/material.dart';
 
+//Category product list
 class CategoryDealsScreen extends StatefulWidget {
   static const String routeName = '/category-deals';
   final String category;
